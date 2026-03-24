@@ -1,9 +1,13 @@
 class  RemoveTrail{
-   Set<Character> set=new HashSet<>();
+   boolean get(char c){
+        if(c=='a' || c=='e' || c=='i'  || c=='o' || c=='u')
+        return true ;
+        else
+        return false;
+    }
    
     public String trimTrailingVowels(String s) {
-         set.add('a');set.add('e');set.add('i');set.add('o');set.add('u');
-        if(s==null || s.length()==0 || !set.contains(s.charAt(s.length()-1)) ){
+        if(s==null || s.length()==0 || !get(s.charAt(s.length()-1)) ){
          return s;
         }
        
@@ -11,7 +15,7 @@ class  RemoveTrail{
          
         while(!istrue && s.length()>0){
              
-            if(!set.contains(s.charAt(s.length()-1))){
+            if(!get(s.charAt(s.length()-1))){
               istrue=true;
             }else{
                 s=s.substring(0,s.length()-1);
