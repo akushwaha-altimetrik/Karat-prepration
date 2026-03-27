@@ -2,6 +2,7 @@ class Loops{
      static void print(int a,int b,int n){
       int next=1;
         int prev=0+a;
+          
         for(int i=0;i<n;i++){
           prev+=next*b;
             next*=2;
