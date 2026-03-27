@@ -2,6 +2,7 @@
 class Format{
   
     static  String getSpace(int n){
+      
             String spac="";
             while(n>0){
             spac+=" ";
