@@ -4,6 +4,7 @@ class  RemoveTrail{
         return true ;
         else
         return false;
+      
     }
    
     public String trimTrailingVowels(String s) {
