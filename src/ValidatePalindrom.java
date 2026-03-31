@@ -1,11 +1,6 @@
 class ValidatePalindrom {
     public boolean isPalindrome(String s) {
-        if (s==null || s.length()<2)
-        return true; 
-        String result=result = s.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
-        if (s==null || s.length()<2)
-        return true; 
-        System.out.println(result);
+       String result= s.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
         int i=0;
         int j=result.length()-1;
         boolean isTrue=true;
