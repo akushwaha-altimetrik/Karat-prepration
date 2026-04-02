@@ -4,51 +4,27 @@ class AddTowNumbers{
             ListNode list=result;
             int rm=0;
            
-            while(l1!=null && l2!=null){
-                int v=l1.val+l2.val+rm;
-                l1=l1.next;
-                l2=l2.next;
-                ListNode n1=new ListNode();
-                
-                if(v>9){
-                    n1.val=v%10;
-                    rm=v/10;
-                }else{
-                   n1.val=v;
-                    rm=0;
+            while(l1!=null || l2!=null){
+                int sum=rm;
+                if(l1!=null){
+                    sum+=l1.val;
+                     l1=l1.next;
                 }
-                if(list==null){
-                    
-                    list=n1;
-                  
-                }else{
-                    list.next=n1;
-                    
+                if(l2!=null){
+                    sum+=l2.val;
+                     l2=l2.next;
+
                 }
-               list=list.next;
-            }
-            ListNode rl=null;
-            if(l1==null && l2!=null){
-                rl=l2;
-            }else if(l2==null && l1!=null){
-                rl=l1;
-            }
-            
-            while(rl!=null){
-                 int v=rl.val+rm;
-                rl=rl.next;
-                 ListNode n1=new ListNode();
-                if(v>9){
-                     n1.val=v%10;
-                    rm=v/10;
-                }else{
-                    n1.val=v;
-                    rm=0;
-                }
-                list.next=n1;
+               
+               
+
+                list.next=new ListNode(sum%10);
+               // System.out.println(list.val);
                 list=list.next;
+                rm=sum/10;
                
             }
+           
             if(rm>0)
             list.next=new ListNode(rm);
            
